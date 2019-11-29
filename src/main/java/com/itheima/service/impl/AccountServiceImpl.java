@@ -10,8 +10,8 @@ import com.itheima.service.IAccountService;
  */
 public class AccountServiceImpl implements IAccountService {
 
-//    private IAccountDao accountDao = new AccountDaoImpl();
-    private IAccountDao accountDao = (IAccountDao) BeanFactory.getBean("accountDao");
+    private IAccountDao accountDao = new AccountDaoImpl();
+//    private IAccountDao accountDao = (IAccountDao) BeanFactory.getBean("accountDao");
     public void saveAccount() {
         accountDao.saveAccount();
     }
