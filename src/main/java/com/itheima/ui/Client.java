@@ -41,11 +41,15 @@ public class Client {
 //        ApplicationContext ac = new FileSystemXmlApplicationContext("D:\\develop\\idea\\IdeaProjects\\xinjian" +
 //                "\\Practice_spring\\src\\main\\resources\\bean.xml");
         //2.根据ID来获取bean对象
-        IAccountService as = (IAccountService) ac.getBean("accountService");
         IAccountDao adao = ac.getBean("accountDao", IAccountDao.class);
-
+        IAccountService as = (IAccountService) ac.getBean("accountService");
         as.saveAccount();
 
+        IAccountService as2 = (IAccountService) ac.getBean("accountService2");
+        as2.saveAccount();
+
+        IAccountService as3 = (IAccountService) ac.getBean("accountService3");
+        as3.saveAccount();
         //手动关闭容器
         ac.close();
     }
